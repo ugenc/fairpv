@@ -1,0 +1,525 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/aneliakurteva/ontologies/2024/6/untitled-ontology-203#"
+     xml:base="http://www.semanticweb.org/aneliakurteva/ontologies/2024/6/untitled-ontology-203"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:fairpv="http://www.semanticweb.org/"
+     xmlns:schema="https://schema.org/"
+     xmlns:RePlanIT="http://www.semanticweb.org/RePlanIT/"
+     xmlns:dcmitype="http://purl.org/dc/dcmitype/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024">
+        <owl:imports rdf:resource="http://www.semanticweb.org/RePlanIT/"/>
+        <owl:imports rdf:resource="https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology-1.0"/>
+        <dc:description>An ontology for solar panels. To be used for building digital product passports and predictive maintenance.</dc:description>
+        <owl:versionInfo>v1, 30/07/2024</owl:versionInfo>
+        <schema:author>Uğur Genç</schema:author>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- https://schema.org/Date -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/Date"/>
+    
+
+
+    <!-- https://schema.org/author -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/author"/>
+    
+
+
+    <!-- https://schema.org/version -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/version"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/RePlanIT/dueToReason -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RePlanIT/dueToReason">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RePlanIT/CircularStrategy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Reason"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#ComprisesOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#ComprisesOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology-1.1#SolarCell"/>
+        <rdfs:range rdf:resource="https://w3id.org/seas/SolarModule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#associatedTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#associatedTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Time"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasGeoCoordinates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasGeoCoordinates">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="https://schema.org/GeoCoordinates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasMaterialComposition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasMaterialComposition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="http://matonto.org/ontologies/matonto#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasSensor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:domain rdf:resource="https://w3id.org/seas/SolarModule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasSolarCell -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasSolarCell">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#isSolarCellOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/seas/SolarModule"/>
+        <rdfs:range rdf:resource="https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology-1.1#SolarCell"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasSolarModule -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasSolarModule">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#isSolarModuleOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="https://w3id.org/seas/SolarModule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasWeather -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#hasWeather">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/GeoCoordinates"/>
+        <rdfs:range rdf:resource="https://bimerr.iot.linkeddata.es/def/weather/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#isAStrategyFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#isAStrategyFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RePlanIT/CircularStrategy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="https://w3id.org/seas/SolarModule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#isSolarCellOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#isSolarCellOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology-1.1#SolarCell"/>
+        <rdfs:range rdf:resource="https://w3id.org/seas/SolarModule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#isSolarModuleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#isSolarModuleOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/seas/SolarModule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#CircularStrategyID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#CircularStrategyID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RePlanIT/CircularStrategy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Circular Strategy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#GlassWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#GlassWeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#MaterialWeight"/>
+        <rdfs:domain rdf:resource="http://matonto.org/ontologies/matonto#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#MaterialWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#MaterialWeight">
+        <rdfs:domain rdf:resource="http://matonto.org/ontologies/matonto#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>Material Weight</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SensorID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SensorID">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Sensor ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarCellId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarCellId">
+        <rdfs:domain rdf:resource="https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology-1.1#SolarCell"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Solar Cell ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarModuleID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarModuleID">
+        <rdfs:domain rdf:resource="https://w3id.org/seas/SolarModule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Solar Module ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarModuleWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarModuleWeight">
+        <rdfs:domain rdf:resource="https://w3id.org/seas/SolarModule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>Solar Module Weight</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanelID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanelID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Solar Panel ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanelWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanelWeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>in grams</rdfs:comment>
+        <rdfs:label>Solar Panel Weight</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#endTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#endTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Time"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:label>end Time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#startTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#startTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Time"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:label>start Time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/latitude -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/latitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/longitude -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/longitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/postalCode -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/postalCode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>postal Code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://matonto.org/ontologies/matonto#Ceramics -->
+
+    <owl:Class rdf:about="http://matonto.org/ontologies/matonto#Ceramics">
+        <rdfs:subClassOf rdf:resource="http://matonto.org/ontologies/matonto#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://matonto.org/ontologies/matonto#Material -->
+
+    <owl:Class rdf:about="http://matonto.org/ontologies/matonto#Material">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Biosphere_Solar"/>
+        <rdfs:comment>This will be discussed with Stakeholders</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/RePlanIT/CircularStrategy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/RePlanIT/CircularStrategy">
+        <rdfs:label>Circular Strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/RePlanIT/Maintenance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/RePlanIT/Maintenance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/RePlanIT/CircularStrategy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/RePlanIT/Recovery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/RePlanIT/Recovery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/RePlanIT/CircularStrategy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Biosphere_Solar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Biosphere_Solar">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Brand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Reason -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Reason">
+        <rdfs:label>Reason</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel">
+        <dc:description>A collection of solar modules.</dc:description>
+        <dc:description>A solar panel is a device that converts sunlight into electricity by using photovoltaic (PV) cells.</dc:description>
+        <rdfs:label>Solar Panel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Time">
+        <rdfs:label>Time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <rdfs:label>Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://bimerr.iot.linkeddata.es/def/weather/ -->
+
+    <owl:Class rdf:about="https://bimerr.iot.linkeddata.es/def/weather/">
+        <rdfs:label>Weather</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology-1.1#SolarCell -->
+
+    <owl:Class rdf:about="https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology-1.1#SolarCell">
+        <dc:description>Solar cells belong a solar module.</dc:description>
+        <rdfs:label>Solar Cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/GeoCoordinates -->
+
+    <owl:Class rdf:about="https://schema.org/GeoCoordinates">
+        <rdfs:label>Geo Coordinates</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/SolarModule -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/SolarModule">
+        <dc:description>A collection of solar cells.</dc:description>
+        <rdfs:label>Solar Module</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.w3.org/TR/owl-time/#time:Instant -->
+
+    <owl:Class rdf:about="https://www.w3.org/TR/owl-time/#time:Instant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#Time"/>
+        <rdfs:label>Time Instant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/RePlanIT/Data">
+        <owl:deprecated>not applicable</owl:deprecated>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/RePlanIT/HardwareComponent">
+        <rdfs:comment>This will be discussed with stakeholders (like Biosphere)</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/RePlanIT/ICTDevice">
+        <owl:deprecated>not applicable</owl:deprecated>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ugenc/ontologies/2024/6/fairpv-onto-2024#SolarPanel"/>
+            <rdf:Description rdf:about="https://ci.mines-stetienne.fr/seas/PhotovoltaicOntology-1.1#SolarCell"/>
+            <rdf:Description rdf:about="https://w3id.org/seas/SolarModule"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
